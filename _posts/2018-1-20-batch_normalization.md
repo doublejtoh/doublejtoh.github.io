@@ -30,6 +30,10 @@ Layer가 많이 쌓이면 쌓일수록 학습이 잘 안될 수 있다. 많은 �
  
  
 
-![batch norm pic 1 ](./images/스크린샷 2018-01-23 오전 3.39.14.png)
-
+![batch norm pic 1 ](/images/batch_norm_pic1.png)
+왼쪽의 경우 batch norm을 적용한 경우의 distribution과 기존의 distribution을 나타낸 것이고, <br>
+오른쪽의 경우 batch norm을 적용하지 않은 경우의 distribution과 기존의 distribution을 나타낸 것이다.<br>
+왼쪽의 경우 BN이 적용되기 때문에 분산과 평균이 기존의 distribution과 크게 다르지 않아져서 layer가 계속 중첩되도 학습이 잘 되는 반면,<br>
+오른쪽의 경우 BN을 적용하지 않았기 때문에 분산과 평균이 기존의 distribution보다 크게 달라져서 오른쪽 위의 그림과 같이 layer가 많이 중첩되면
+학습이 잘 되지 않는 것을 볼 수 있다.
 
