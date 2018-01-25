@@ -37,3 +37,25 @@ Layer가 많이 쌓이면 쌓일수록 학습이 잘 안될 수 있다. 많은 �
 오른쪽의 경우 BN을 적용하지 않았기 때문에 분산과 평균이 기존의 distribution보다 크게 달라져서 오른쪽 위의 그림과 같이 layer가 많이 중첩되면
 학습이 잘 되지 않는 것을 볼 수 있다.
 
+
+### Batch Normalization하는 방법 ###
+
+생각보다 간단하다. mini batch에 대해서 평균과 분산을 구한 후, 표준 정규화를 통해 normalize해준다.<br>
+이 때 정규화 한 distribution에 대해서 감마를 곱해주고, Biased B 를 더해주어서 normalize되는 scale을 shift해준다.<br>
+scale shift를 위한 변수(r(감마),B)는 backpropagation을 통해 learning 될 수 있다.<br>
+그 이유는 batch normalization한 결과로 sigmoid와 같은 activation에 들어가게 될 때 그래프에서 보면 값이 -1~1 사이에 분포하게 되면 nonlinearity를 보장하지 못할 수 있기 때문에, 값의 범위를 좀 더 넓혀주어서 nonlinearlity를 조금 더 확보해줄 수 있도록 한다.<br>
+
+
+### Batch Normalization을 쓰면 좋은 점 ###
+
+<li> covariate internal shift 문제를 해결해준다. </li>
+<li> 더 큰 learning rate를 줄 수 있다. </li>
+<li> initialization을 크게 신경쓰지 않아도 학습이 잘 된다. </li>
+<li> dropout이 크게 필요하지 않는다. </li>
+<li> ## 성능이 대체로 좋아진다. ## </li>
+
+
+
+
+
+
