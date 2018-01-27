@@ -12,3 +12,99 @@
 
 
 
+let 과 var의 차이
+
+let은 제일 가까운 블록안에서만 유효하다.
+var은 함수 내에서 유효하다.
+
+예제 1.
+'''java
+function order(x,y){
+
+	var tmp1 = x;
+	
+	if(y> 0){
+		let tmp2 = y;
+	}
+	console.log(tmp1);
+	console.log(tmp2);
+
+
+}
+
+order(1,2);
+'''
+
+예제 2.
+'''java
+var scope = 10;
+function scopeExam(){
+
+	var scope = 20;
+	console.log("scope= "+scope);
+
+}
+
+scopeExam();
+'''
+
+# 화살표 함수 : 무명 함수를 생성하는 함수 표현방법 중 하나
+
+(params...) => (함수 내용)
+
+# 객체 생성과 생성자
+'''java
+var my_grade = {
+  'math' : 100
+  
+}
+'''
+
+
+
+생성자: 객체를 만드는 역할을 하는 함수
+-> 코드의 재활용성 올라간다.
+
+javascript에서는 생성자 또한 함수로 구현하는것이 대부분. 
+
+
+javascript에서의 모듈 로드
+<script src="모듈 이름"></script>
+
+Node.js에서의 모듈 로드
+'''java
+var 객체 = require('모듈 이름'); //require은 모듈을 가져온 다음 , 모듈을 사용할 수 있는 객체를 리턴해준다.
+'''
+
+* 콜백과 비동기 처리 
+
+
+콜백: 어떤 함수의 매개변수가 함수인 경우 
+
+
+* 상속!
+
+'''java
+
+function Person(){}
+
+Person.prototype.introduce = function(myname){
+	console.log("my name is"+ myname);
+}
+
+function Programmer(){}
+
+Programmer.prototype = new Person()
+
+Programmer.prototype.coding = function(){
+	for (var i=1; i<=10; i++){
+		console.log(i);
+	}
+}
+
+var o = new Programmer();
+o.introduce("jeong");
+o.coding();
+
+'''
+prototype은 뭔가 코드 내부에서 attribute들을 추가하면 시간도 오래걸리니깐 function 외부에서 attribute를 추가할 수 있게된다.
