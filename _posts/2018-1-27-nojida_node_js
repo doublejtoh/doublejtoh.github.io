@@ -1,0 +1,40 @@
+---
+layout: post
+title: Nojida : Node.js
+---
+
+Python , Ruby, PHP, JAVA와 같은 경쟁언어들에 비해서 Node.js가 갖는 장점:<br>
+1. 속도! -> 구글의 v8엔진, event driven paradigm, 콜백, 비동기적인 특징<br>
+2. Web Browser에서 front를 js로, backend도 js로 하게되면 하나의 언어로 어플리케이션을 전부 구현할 수 있다는 장점이 있다.<br>
+
+const http = require('http'); 
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World\n');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+
+
+NPM: node package Manager
+노드 js의 앱스토어같은 느낌
+-> 설치,삭제,업그레이드, 의존성 관리
+
+# Express request 와 response
+
+나의 컴퓨터에서 서버로 보내는 request! 
+서버에서 나의 컴퓨터로 오는 response!
+
+웹은 클라이언트의 request와 서버의 response의 연속이다!
+
+
+
+
+
