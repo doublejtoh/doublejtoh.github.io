@@ -1,0 +1,29 @@
+---
+layout: post
+title: wavenet 논문 리뷰
+---
+# Wavenet!
+
+
+Wavenet 논문 링크  https://arxiv.org/abs/1609.03499
+Seungil Kim님의 Wavenet 논문 리뷰 영상을 참고하였습니다. https://www.youtube.com/watch?v=GyQnex_DK2k
+
+
+#  Wavenet이란 무엇인가?
+Generative Model of Raw Audio Waveform이라고 논문에 소개되어 있다. 즉, 전의 audio timeseries sample들을 이용하여<br>
+predictive distribution을 가지고 regression하는 모델이다. 이 모델에는 ** Dilated causal convolution ** 메카니즘을 통해 long series
+data를 cover하는 regression을 할 때 좋은 성능을 보인다고 한다. <br>
+* 조금 복잡한 메카니즘은 van den Oord의 논문인 pixelCNN based라고 한다.
+
+# Stack of Convolution layer?
+먼저 수식을 보자!
+<joint probability 사진>
+ eq1이 갖는 의미는 "모든 t에 대해서 x(t)라는 audio sample에서는 이전의 모든 timestep의 audio sample 값을 조건부로 갖는다" 인 듯 하다.
+ 이러한 conditional probability distribution은 stack of convolution layer로 구현되어 질 수 있다.
+<stack of convolution layer 사진>
+
+
+# Dilated causal convolution
+
+long timeseries data를 커버하는 많은 
+
