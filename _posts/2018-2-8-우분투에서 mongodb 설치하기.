@@ -1,3 +1,8 @@
+---
+layout: post
+title: 우분투 14.04 에서 mongoDB 설치하기
+---
+
 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/를 참고하여 작성하였습니다.
 
 1. package management system이 사용하는 public key import하기
@@ -31,5 +36,5 @@ sudo service mongod start
 * Starting database mongodb
 ...fail 
 이런 오류가 떴다. 또 구글링해보니, sudo -u mongodb mongod --dbpath /var/lib/mongodb 이런식으로 경로를 지정해주니,서버가 
-켜졌다. 
+켜졌다. (https://stackoverflow.com/questions/17527606/mongodb-failing-on-debian 참고)
 끝!
