@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Batch Normalization
+title: Generative Destroyed Architectures Restoration Image Inpainting results
 ---
  
 
