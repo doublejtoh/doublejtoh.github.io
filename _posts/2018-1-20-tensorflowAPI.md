@@ -56,3 +56,56 @@ tf.argmax(x, axis=1).eval() # output: [2, 0]
 
 ## tf.squeeze
 
+tensor의 shape으로부터 dimension size가 1인 것들을 제거한다.
+
+```python
+# t는 [1, 2, 1, 3, 1, 1] 의 shape을 가지고 있는 tensor라고 가정하자.
+tf.shape(tf.squeeze(t)) # output : 2 X 3 tensor
+
+```
+
+## tf.expand_dims
+
+tensor의 shape에 dimension을 1 추가 한다.
+
+```python
+# t는 [2]의 shape를 갖는 tensor라고 가정하자.
+tf.shape(tf.expand_dims(t, 0)) # output shape: [1, 2]
+tf.shape(tf.expand_dims(t, 1)) # output shape: [2, 1]
+tf.shape(tf.expand_dims(t, -1)) # output shape: [2, 1]
+
+# t2는 [2, 3, 5]의 shape를 갖는 tensor라고 하자.
+tf.shape(tf.expand_dims(t2, 0)) # output shape: [1, 2, 3, 5]
+tf.shape(tf.expand_dims(t2, 2)) # output shape: [2, 3, 1, 5]
+tf.shape(tf.expand_dims(t2, 3)) # output shape: [2, 3, 5, 1]
+```
+
+## tf.one_hot
+
+```python
+
+indices = [0, 1, 2]
+depth = 3
+tf.one_hot(indices, depth) # output shape: [3, 3]
+# [[1., 0., 0.],
+  [0., 1., 0.],
+  [0., 0., 1.]]
+```
+원래 shape 가 [ A, B ] 였다면, one_hot을 거치면 shape이 [ A, B , Depth]가 된다.
+
+## tf.cast
+
+```python
+tf.cast([1.8, 2.2, 3.3, 4.9], tf.int32).eval() # output: [1, 2, 3, 4]. int32 tensor로 캐스팅된다.
+tf.cast([True, False, 1 == 1, 0 == 1], tf.int32).eval() # output: [1, 0, 1, 0]
+```
+
+
+## tf.transpose
+
+좋은 예제가 있어 공유한다. <br>
+http://superelement.tistory.com/18
+
+
+
+
