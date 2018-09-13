@@ -107,5 +107,19 @@ tf.cast([True, False, 1 == 1, 0 == 1], tf.int32).eval() # output: [1, 0, 1, 0]
 http://superelement.tistory.com/18
 
 
+## tf.contrib.layers.flatten
+
+batch_size는 유지하고, 그에 따른 나머지를 알맞게 reshape해준다. 
+
+```python
+x = np.arange(40).reshape(4, 2, 5)
+flattened_x = tf.contrib.layers.flatten(x)
+print(flattened_x.eval())  # output shape : (4 X 10)
+
+```
+
+<li> Q: 왜 flatten을 사용할 까? </li>
+A: <a href="https://stackoverflow.com/questions/44572141/why-do-we-flatten-the-data-before-we-feed-it-into-tensorflow">Because when you're adding a fully connected layer, you always want your data to be a (1 or) 2 dimensional matrix, where each row is the vector representing your data.</a>
+
 
 
