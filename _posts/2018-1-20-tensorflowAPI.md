@@ -122,9 +122,6 @@ print(flattened_x.eval())  # output shape : (4 X 10)
 A: <a href="https://stackoverflow.com/questions/44572141/why-do-we-flatten-the-data-before-we-feed-it-into-tensorflow">Because when you're adding a fully connected layer, you always want your data to be a (1 or) 2 dimensional matrix, where each row is the vector representing your data.</a>
 
 ## tf.contrib.frameworks.arg_scope
-When defining convolution layers, you may always use the same padding type and the same initializer, and maybe even the same convolution size. For you pooling, maybe you are also always using the same 2x2 pooling size. And so on.
-
-arg_scope is a way to avoid repeating providing the same arguments over and over again to the same layer types.
 CNN Layer들을 tf로 구현할 때, 같은 padding type, 같은 initializer, convolution size, pooling size들이 같은 layer들을 중첩적으로 사용하는 경우가 있다. 그럴 때, 필요한 것이 arg_scope이다.
 
 
