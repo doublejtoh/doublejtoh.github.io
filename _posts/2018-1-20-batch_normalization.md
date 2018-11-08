@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Batch Normalization
+comment: true
 ---
 
 
